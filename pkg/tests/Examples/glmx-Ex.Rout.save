@@ -1,11 +1,13 @@
 
-R version 3.4.1 (2017-06-30) -- "Single Candle"
-Copyright (C) 2017 The R Foundation for Statistical Computing
+R version 4.1.2 (2021-11-01) -- "Bird Hippie"
+Copyright (C) 2021 The R Foundation for Statistical Computing
 Platform: x86_64-pc-linux-gnu (64-bit)
 
 R is free software and comes with ABSOLUTELY NO WARRANTY.
 You are welcome to redistribute it under certain conditions.
 Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
 
 R is a collaborative project with many contributors.
 Type 'contributors()' for more information and
@@ -21,6 +23,7 @@ Type 'q()' to quit R.
 > library('glmx')
 > 
 > base::assign(".oldSearch", base::search(), pos = 'CheckExEnv')
+> base::assign(".old_wd", base::getwd(), pos = 'CheckExEnv')
 > cleanEx()
 > nameEx("AbortionAmbivalence")
 > ### * AbortionAmbivalence
@@ -177,12 +180,13 @@ Goodness_of_fit      126.12  173.65  181.27  142.34  182.86  193.55  180.91
 + }
 Loading required package: AER
 Loading required package: car
+Loading required package: carData
 Loading required package: lmtest
 Loading required package: zoo
 
-Attaching package: 'zoo'
+Attaching package: ‘zoo’
 
-The following objects are masked from 'package:base':
+The following objects are masked from ‘package:base’:
 
     as.Date, as.Date.numeric
 
@@ -208,8 +212,8 @@ erasupport           1.612  1.566      1.570      1.590  1.403  1.403
 > 
 > cleanEx()
 
-detaching 'package:AER', 'package:survival', 'package:sandwich',
-  'package:lmtest', 'package:zoo', 'package:car'
+detaching ‘package:AER’, ‘package:survival’, ‘package:sandwich’,
+  ‘package:lmtest’, ‘package:zoo’, ‘package:car’, ‘package:carData’
 
 > nameEx("BeetleMortality")
 > ### * BeetleMortality
@@ -278,7 +282,7 @@ age> 24           0.29212    0.11949   2.445 0.014493 *
 incomehigh       -0.01521    0.12482  -0.122 0.903048    
 schoolingfurther  0.54814    0.10866   5.045 4.54e-07 ***
 ---
-Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
 (Dispersion parameter for binomial family taken to be 1)
 
@@ -353,9 +357,9 @@ Loading required package: MASS
 Loading required package: lmtest
 Loading required package: zoo
 
-Attaching package: 'zoo'
+Attaching package: ‘zoo’
 
-The following objects are masked from 'package:base':
+The following objects are masked from ‘package:base’:
 
     as.Date, as.Date.numeric
 
@@ -413,19 +417,12 @@ Number of iterations in BFGS optimization: 9 (profile) 1 (full)
 + summary(m_hnb2)
 + }
 Loading required package: pscl
-Loading required package: lattice
 Classes and Methods for R developed in the
-
 Political Science Computational Laboratory
-
 Department of Political Science
-
 Stanford University
-
 Simon Jackman
-
 hurdle and zeroinfl functions by Achim Zeileis
-
 
 Call:
 hurdle(formula = y ~ x, data = d, dist = "negbin", zero.dist = "negbin")
@@ -455,8 +452,8 @@ Log-likelihood: -342.8 on 6 Df
 > 
 > cleanEx()
 
-detaching 'package:pscl', 'package:lattice', 'package:lmtest',
-  'package:zoo', 'package:MASS'
+detaching ‘package:pscl’, ‘package:lmtest’, ‘package:zoo’,
+  ‘package:MASS’
 
 > nameEx("hetglm")
 > ### * hetglm
@@ -552,9 +549,9 @@ Number of iterations in nlminb optimization: 9
 Loading required package: lmtest
 Loading required package: zoo
 
-Attaching package: 'zoo'
+Attaching package: ‘zoo’
 
-The following objects are masked from 'package:base':
+The following objects are masked from ‘package:base’:
 
     as.Date, as.Date.numeric
 
@@ -563,13 +560,13 @@ Likelihood ratio test
 Model 1: y ~ a + x + z | a
 Model 2: y ~ a/(x + z) | 1
   #Df  LogLik Df  Chisq Pr(>Chisq)
-1   5 -77.701                     
-2   6 -77.605  1 0.1935       0.66
+1   5 -75.088                     
+2   6 -75.064  1 0.0466     0.8292
 > 
 > ## both ratios are == 2 in the data generating process
 > c(x = coef(m2)[3]/coef(m2)[4], z = coef(m2)[5]/coef(m2)[6])
   x.a1:x   z.a1:z 
-2.526854 1.867081 
+3.758025 3.179625 
 > 
 > 
 > 
@@ -649,6 +646,7 @@ Model 2: y ~ a/(x + z) | 1
 + }
 Loading required package: AER
 Loading required package: car
+Loading required package: carData
 Loading required package: sandwich
 Loading required package: survival
 Likelihood ratio test
@@ -664,8 +662,8 @@ Model 2: participation ~ kids * fincome
 > graphics::par(get("par.postscript", pos = 'CheckExEnv'))
 > cleanEx()
 
-detaching 'package:AER', 'package:survival', 'package:sandwich',
-  'package:car', 'package:lmtest', 'package:zoo'
+detaching ‘package:AER’, ‘package:survival’, ‘package:sandwich’,
+  ‘package:car’, ‘package:carData’, ‘package:lmtest’, ‘package:zoo’
 
 > nameEx("pregibon")
 > ### * pregibon
@@ -703,9 +701,10 @@ detaching 'package:AER', 'package:survival', 'package:sandwich',
 > graphics::par(get("par.postscript", pos = 'CheckExEnv'))
 > ### * <FOOTER>
 > ###
+> cleanEx()
 > options(digits = 7L)
 > base::cat("Time elapsed: ", proc.time() - base::get("ptime", pos = 'CheckExEnv'),"\n")
-Time elapsed:  3.424 0.036 3.459 0 0 
+Time elapsed:  2.071 0.054 2.124 0 0 
 > grDevices::dev.off()
 null device 
           1 
