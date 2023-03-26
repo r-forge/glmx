@@ -1,3 +1,10 @@
+# glmx 0.2-0
+
+* Improved handling of dispersion in GLM families based on the new
+  `family$dispersion` infrastructure in R 4.3.0 (contributed by
+  Martyn Plummer).
+
+
 # glmx 0.1-3
 
 * Small documentation improvements.
